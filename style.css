@@ -1,0 +1,422 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    transition: 0.3s;
+}
+
+
+/* Header */
+
+header {
+    background-color: #1f2937;
+    color: white;
+
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header button {
+    background-color: white;
+    color: #222;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* Container */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+
+.card {
+    background-color: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+
+/* Form */
+
+.form-section,
+.orders-section,
+.chart-section {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 40px;
+}
+
+
+form {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+label {
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+
+input,
+select {
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+
+button {
+
+    padding: 12px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Search */
+
+.tools {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.tools input {
+    flex: 1;
+}
+
+
+.tools select {
+    width: 200px;
+}
+
+
+/* Table */
+
+.table-container {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 1000px;
+}
+
+
+th,
+td {
+
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: center;
+}
+
+
+th {
+
+    background-color: #1f2937;
+
+    color: white;
+}
+
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Status */
+
+.status {
+
+    padding: 6px 10px;
+
+    border-radius: 15px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* Edit */
+
+.edit-btn {
+
+    background-color: #f59e0b;
+
+    padding: 7px 10px;
+
+    font-size: 13px;
+
+    margin: 2px;
+}
+
+
+/* Delete */
+
+.delete-btn {
+
+    background-color: #dc2626;
+
+    padding: 7px 10px;
+
+    font-size: 13px;
+
+    margin: 2px;
+}
+
+
+/* Chart */
+
+.chart-section canvas {
+
+    max-width: 600px;
+
+    max-height: 400px;
+
+    margin: auto;
+
+    display: block;
+}
+
+
+/* Modal */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color:
+        rgba(0, 0, 0, 0.6);
+}
+
+
+.modal-content {
+
+    background-color: white;
+
+    width: 90%;
+
+    max-width: 500px;
+
+    margin: 5% auto;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    position: relative;
+}
+
+
+.close {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 10px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* Dark Mode */
+
+body.dark {
+
+    background-color: #111827;
+
+    color: white;
+}
+
+
+body.dark .card,
+body.dark .form-section,
+body.dark .orders-section,
+body.dark .chart-section,
+body.dark .modal-content {
+
+    background-color: #1f2937;
+
+    color: white;
+}
+
+
+body.dark input,
+body.dark select {
+
+    background-color: #374151;
+
+    color: white;
+
+    border-color: #555;
+}
+
+
+body.dark tr:hover {
+
+    background-color: #374151;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .tools {
+
+        flex-direction: column;
+    }
+
+
+    .tools select {
+
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+}
+```

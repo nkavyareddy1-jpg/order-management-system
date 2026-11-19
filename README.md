@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Order Management System (Full Stack)
 
 A beginner-friendly full-stack Order Management System built with HTML, CSS, JavaScript, Node.js, Express and MongoDB.
@@ -120,3 +121,6 @@ order-management-system/
 ## Notes
 
 This is a learning/demo project. Before production use, add authentication, authorization, automated tests, backups, and deployment security.
+=======
+# order-management-system
+>>>>>>> 4c4bc9a3b706aa4a3c6f15eaa6fc5fd762eb4075
