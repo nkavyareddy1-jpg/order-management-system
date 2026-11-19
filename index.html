@@ -1,0 +1,339 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div>
+            <h1>Order Management System</h1>
+            <p>Manage your orders easily</p>
+        </div>
+
+        <button id="darkModeBtn">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+
+    <div class="container">
+
+
+        <!-- Dashboard -->
+
+        <h2>Dashboard</h2>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p id="totalOrders">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Orders</h3>
+                <p id="pendingOrders">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Delivered Orders</h3>
+                <p id="deliveredOrders">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <p id="totalRevenue">₹0</p>
+            </div>
+
+        </div>
+
+
+        <!-- Add Order -->
+
+        <div class="form-section">
+
+            <h2>Add New Order</h2>
+
+            <form id="orderForm">
+
+                <label>Customer Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+
+                <label>Product</label>
+
+                <input
+                    type="text"
+                    id="product"
+                    placeholder="Enter product name"
+                    required
+                >
+
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    placeholder="Enter quantity"
+                    required
+                >
+
+
+                <label>Price</label>
+
+                <input
+                    type="number"
+                    id="price"
+                    min="1"
+                    placeholder="Enter price"
+                    required
+                >
+
+
+                <label>Status</label>
+
+                <select id="status">
+
+                    <option value="Pending">Pending</option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Shipped">
+                        Shipped
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Order
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Orders -->
+
+        <div class="orders-section">
+
+            <h2>Orders</h2>
+
+
+            <div class="tools">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search customer or product..."
+                >
+
+
+                <select id="filterStatus">
+
+                    <option value="All">
+                        All Orders
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Shipped">
+                        Shipped
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+
+                            <th>Customer</th>
+
+                            <th>Product</th>
+
+                            <th>Quantity</th>
+
+                            <th>Price</th>
+
+                            <th>Total</th>
+
+                            <th>Date</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="orderTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- Chart -->
+
+        <div class="chart-section">
+
+            <h2>Order Status Chart</h2>
+
+            <canvas id="orderChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- Edit Modal -->
+
+    <div id="editModal" class="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal" class="close">
+                &times;
+            </span>
+
+            <h2>Edit Order</h2>
+
+
+            <form id="editForm">
+
+                <label>Customer Name</label>
+
+                <input
+                    type="text"
+                    id="editCustomer"
+                    required
+                >
+
+
+                <label>Product</label>
+
+                <input
+                    type="text"
+                    id="editProduct"
+                    required
+                >
+
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    id="editQuantity"
+                    min="1"
+                    required
+                >
+
+
+                <label>Price</label>
+
+                <input
+                    type="number"
+                    id="editPrice"
+                    min="1"
+                    required
+                >
+
+
+                <label>Status</label>
+
+                <select id="editStatus">
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Shipped">
+                        Shipped
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Save Changes
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
